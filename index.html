@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>for you</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     WELCOME
+================================================== -->
+
+<section
+    id="welcomeScreen"
+    class="screen welcome-screen"
+>
+
+    <div class="welcome-content">
+
+        <h1>
+            im really sorry
+        </h1>
+
+        <p>
+            i dont want you to feel sad
+        </p>
+
+        <button
+            class="heart-button"
+            onclick="openMenu()"
+        >
+            ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     THREE OPTIONS
+================================================== -->
+
+<section
+    id="menuScreen"
+    class="screen menu-screen hidden"
+>
+
+    <div class="menu-content">
+
+        <h1>
+            for you
+        </h1>
+
+        <p class="menu-subtitle">
+            choose something
+        </p>
+
+
+        <div class="menu-grid">
+
+
+            <!-- PLAYLIST -->
+
+            <button
+                class="menu-card"
+                onclick="openPlaylist()"
+            >
+
+                <div class="menu-icon">
+                    🎵
+                </div>
+
+                <h2>
+                    our songs
+                </h2>
+
+                <p>
+                    playlist with our songs
+                </p>
+
+            </button>
+
+
+
+            <!-- TIMER -->
+
+            <button
+                class="menu-card"
+                onclick="openTimer()"
+            >
+
+                <div class="menu-icon">
+                    ⏳
+                </div>
+
+                <h2>
+                    our time
+                </h2>
+
+                <p>
+                    how long we've been together
+                </p>
+
+            </button>
+
+
+
+            <!-- NOTE -->
+
+            <button
+                class="menu-card"
+                onclick="openNote()"
+            >
+
+                <div class="menu-icon">
+                    💌
+                </div>
+
+                <h2>
+                    a little note
+                </h2>
+
+                <p>
+                    something i want to tell you
+                </p>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PLAYLIST
+================================================== -->
+
+<section
+    id="playlistPage"
+    class="page hidden"
+>
+
+    <button
+        class="back-button"
+        onclick="backToMenu('playlistPage')"
+    >
+        ← back
+    </button>
+
+
+    <div class="playlist-container">
+
+
+        <h1 class="page-title">
+            our songs
+        </h1>
+
+
+        <!-- CURRENT SONG COVER -->
+
+        <div class="cover-wrapper">
+
+            <img
+                id="songCover"
+                class="song-cover"
+                src="song8.jpg"
+                alt="song cover"
+            >
+
+        </div>
+
+
+        <!-- SONG INFORMATION -->
+
+        <div class="song-info">
+
+            <h2 id="songTitle">
+                Very Very Much
+            </h2>
+
+            <p id="songArtist">
+                Our memories
+            </p>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-wrapper">
+
+            <span id="currentTime">
+                0:00
+            </span>
+
+
+            <input
+                id="progressBar"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+
+            <span id="duration">
+                0:00
+            </span>
+
+        </div>
+
+
+        <!-- PLAYER BUTTONS -->
+
+        <div class="player-buttons">
+
+
+            <button
+                class="control-button"
+                onclick="previousSong()"
+            >
+                ⏮
+            </button>
+
+
+            <button
+                id="playButton"
+                class="play-button"
+                onclick="togglePlay()"
+            >
+                ▶
+            </button>
+
+
+            <button
+                class="control-button"
+                onclick="nextSong()"
+            >
+                ⏭
+            </button>
+
+
+            <button
+                id="repeatButton"
+                class="control-button"
+                onclick="toggleRepeat()"
+            >
+                ↻
+            </button>
+
+        </div>
+
+
+        <!-- SONG LIST -->
+
+        <h3 class="songs-heading">
+            songs
+        </h3>
+
+
+        <div
+            id="songList"
+            class="song-list"
+        ></div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     TIMER
+================================================== -->
+
+<section
+    id="timerPage"
+    class="page hidden"
+>
+
+    <button
+        class="back-button"
+        onclick="backToMenu('timerPage')"
+    >
+        ← back
+    </button>
+
+
+    <div class="timer-container">
+
+
+        <h1 class="page-title">
+            our time
+        </h1>
+
+
+        <p class="timer-subtitle">
+            time that we've had together
+        </p>
+
+
+
+        <!-- MET -->
+
+        <div class="timer-card">
+
+            <div class="timer-heart">
+                ♡
+            </div>
+
+            <h2>
+                since we met
+            </h2>
+
+            <p class="timer-date">
+                11 July 2025 · 20:31
+            </p>
+
+            <div
+                id="metCounter"
+                class="counter"
+            >
+                0 days
+                <br>
+                00 : 00 : 00
+            </div>
+
+        </div>
+
+
+
+        <!-- STARTED DATING -->
+
+        <div class="timer-card">
+
+            <div class="timer-heart">
+                ♡
+            </div>
+
+            <h2>
+                since we started dating
+            </h2>
+
+            <p class="timer-date">
+                5 February 2026
+            </p>
+
+            <div
+                id="datingCounter"
+                class="counter"
+            >
+                0 days
+                <br>
+                00 : 00 : 00
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     NOTE
+================================================== -->
+
+<section
+    id="notePage"
+    class="page hidden"
+>
+
+    <button
+        class="back-button"
+        onclick="backToMenu('notePage')"
+    >
+        ← back
+    </button>
+
+
+    <div class="note-container">
+
+        <div class="note-icon">
+            💌
+        </div>
+
+
+        <h1 class="page-title">
+            a little note
+        </h1>
+
+
+        <div class="note-paper">
+
+            <p>
+                i know i promised you . i honstly don t know what i can do so that you don t have this feeling left after this. im scared that it might make you feel like i don t trust you , don t want to share things with you , or that i do t keep me promises. i really donn t want you to feel that way what can i do as apologise that i didn t tell you again
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     AUDIO
+================================================== -->
+
+<audio id="audioPlayer"></audio>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

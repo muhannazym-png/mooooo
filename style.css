@@ -1,0 +1,826 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #5d4a42;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f1ec,
+            #eee2db
+        );
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==================================================
+   GENERAL
+================================================== */
+
+.screen,
+.page {
+    min-height: 100vh;
+}
+
+
+/* ==================================================
+   WELCOME
+================================================== */
+
+.welcome-screen {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+.welcome-content {
+    max-width: 700px;
+}
+
+
+.welcome-content h1 {
+    font-size:
+        clamp(
+            38px,
+            7vw,
+            70px
+        );
+
+    font-weight: normal;
+
+    color: #624e46;
+
+    margin-bottom: 15px;
+}
+
+
+.welcome-content p {
+    font-size:
+        clamp(
+            18px,
+            3vw,
+            25px
+        );
+
+    color: #987e72;
+
+    margin-bottom: 40px;
+}
+
+
+.heart-button {
+    width: 70px;
+    height: 70px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #cba99d;
+
+    color: white;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.heart-button:hover {
+    transform: scale(1.1);
+
+    background: #b99285;
+}
+
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu-screen {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.menu-content {
+    width: 100%;
+
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+.menu-content > h1 {
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            60px
+        );
+
+    font-weight: normal;
+
+    color: #604c43;
+
+    margin-bottom: 8px;
+}
+
+
+.menu-subtitle {
+    color: #9b8176;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.menu-card {
+    border: none;
+
+    background:
+        rgba(
+            255,
+            252,
+            249,
+            0.95
+        );
+
+    border-radius: 25px;
+
+    min-height: 220px;
+
+    padding: 30px 20px;
+
+    cursor: pointer;
+
+    color: #604c43;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            90,
+            67,
+            56,
+            0.09
+        );
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+
+.menu-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(
+            90,
+            67,
+            56,
+            0.14
+        );
+}
+
+
+.menu-icon {
+    font-size: 48px;
+
+    margin-bottom: 18px;
+}
+
+
+.menu-card h2 {
+    font-size: 24px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+
+.menu-card p {
+    font-size: 15px;
+
+    color: #9a8176;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   PAGES
+================================================== */
+
+.page {
+    position: relative;
+
+    padding:
+        70px
+        20px
+        40px;
+}
+
+
+.back-button {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    color: #69534a;
+
+    padding: 10px 18px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.back-button:hover {
+    background: white;
+
+    transform: translateX(-3px);
+}
+
+
+.page-title {
+    text-align: center;
+
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            50px
+        );
+
+    font-weight: normal;
+
+    color: #604c43;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================================================
+   PLAYLIST
+================================================== */
+
+.playlist-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    background:
+        rgba(
+            255,
+            252,
+            249,
+            0.96
+        );
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            90,
+            67,
+            56,
+            0.12
+        );
+}
+
+
+.playlist-container .page-title {
+    margin-bottom: 25px;
+}
+
+
+.cover-wrapper {
+    width: min(
+        100%,
+        400px
+    );
+
+    aspect-ratio: 1 / 1;
+
+    margin:
+        0 auto
+        25px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #eaded8;
+}
+
+
+.song-cover {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.song-info {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.song-info h2 {
+    font-size: 27px;
+
+    font-weight: normal;
+
+    color: #5e4941;
+
+    margin-bottom: 7px;
+}
+
+
+.song-info p {
+    color: #9a8176;
+
+    font-size: 16px;
+}
+
+
+/* ==================================================
+   PROGRESS
+================================================== */
+
+.progress-wrapper {
+    display: grid;
+
+    grid-template-columns:
+        45px
+        1fr
+        45px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #8e756a;
+
+    font-size: 13px;
+}
+
+
+#progressBar {
+    width: 100%;
+
+    accent-color: #b99285;
+
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   PLAYER BUTTONS
+================================================== */
+
+.player-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin:
+        25px
+        0;
+}
+
+
+.control-button,
+.play-button {
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: 0.2s;
+}
+
+
+.control-button {
+    width: 48px;
+    height: 48px;
+
+    background: #eadbd5;
+
+    color: #674f46;
+
+    font-size: 19px;
+}
+
+
+.play-button {
+    width: 65px;
+    height: 65px;
+
+    background: #c49d91;
+
+    color: white;
+
+    font-size: 22px;
+}
+
+
+.control-button:hover,
+.play-button:hover {
+    transform: scale(1.08);
+}
+
+
+#repeatButton.active {
+    background: #997267;
+
+    color: white;
+}
+
+
+/* ==================================================
+   SONG LIST
+================================================== */
+
+.songs-heading {
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: normal;
+
+    color: #725a50;
+
+    margin-bottom: 12px;
+}
+
+
+.song-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    max-height: 380px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+
+.song-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 15px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    color: #725a50;
+}
+
+
+.song-item:hover {
+    background: #f2e7e1;
+}
+
+
+.song-item.active {
+    background: #e8d8d1;
+
+    color: #5d463c;
+}
+
+
+.song-number {
+    width: 25px;
+
+    text-align: center;
+
+    color: #aa8d81;
+
+    font-size: 13px;
+}
+
+
+.song-name {
+    flex: 1;
+
+    font-size: 16px;
+}
+
+
+/* ==================================================
+   TIMER
+================================================== */
+
+.timer-container {
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.timer-subtitle {
+    color: #947b70;
+
+    font-size: 17px;
+
+    margin-top: -15px;
+
+    margin-bottom: 35px;
+}
+
+
+.timer-card {
+    background:
+        rgba(
+            255,
+            252,
+            249,
+            0.96
+        );
+
+    border-radius: 28px;
+
+    padding: 35px 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            90,
+            67,
+            56,
+            0.08
+        );
+}
+
+
+.timer-heart {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.timer-card h2 {
+    font-size: 24px;
+
+    font-weight: normal;
+
+    color: #654e44;
+
+    margin-bottom: 8px;
+}
+
+
+.timer-date {
+    color: #a0877c;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.counter {
+    font-size:
+        clamp(
+            25px,
+            5vw,
+            42px
+        );
+
+    line-height: 1.5;
+
+    color: #795e53;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   NOTE
+================================================== */
+
+.note-container {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.note-icon {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.note-paper {
+    background: #fffaf5;
+
+    padding: 45px 40px;
+
+    border-radius: 6px;
+
+    text-align: left;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            90,
+            67,
+            56,
+            0.12
+        );
+}
+
+
+.note-paper p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #68534a;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 400px;
+
+        margin: 0 auto;
+    }
+
+
+    .menu-card {
+        min-height: 160px;
+    }
+
+
+    .menu-icon {
+        font-size: 40px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .playlist-container {
+        padding: 20px;
+
+        border-radius: 22px;
+    }
+
+
+    .cover-wrapper {
+        border-radius: 16px;
+    }
+
+
+    .player-buttons {
+        gap: 9px;
+    }
+
+
+    .control-button {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .note-paper {
+        padding: 30px 22px;
+    }
+
+
+    .note-paper p {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    .back-button {
+        top: 15px;
+        left: 15px;
+    }
+
+}
